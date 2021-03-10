@@ -1,0 +1,20 @@
+--consulta para ireport--
+SELECT 
+  votacion.estado, 
+  votacion.titulo, 
+  votacion.descripcion, 
+  votacion.fecha_inicio, 
+  votacion.fecha_publicacion, 
+  votacion.fecha_fin, 
+  votacion.direccion_web, 
+  votacion.votos_totales, 
+  votacion.porct_participacion, 
+  votacion.presidente
+ 
+FROM 
+  public.votacion, 
+  public.censo_habilitado, 
+  public.censo
+WHERE 
+  censo_habilitado.id_votacion = votacion.id_votacion AND
+  censo.id_censo = censo_habilitado.id_censo;

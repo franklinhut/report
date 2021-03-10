@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report3_3l3ctorall" language="groovy" printOrder="Horizontal" pageWidth="1000" pageHeight="1000" orientation="Landscape" columnWidth="960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eba0750c-507c-47e3-b61e-48f9bb6a4c67">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+  votacion.estado,
+  censo_habilitado.id_votacion,
+  censo_habilitado.id_censo,
+  censo.id_censo,
+  censo.id_ambito,
+  votacion.titulo,
+  votacion.descripcion,
+  votacion.fecha_inicio,
+  votacion.fecha_publicacion,
+  votacion.fecha_fin,
+  votacion.direccion_web,
+  votacion.votos_totales,
+  votacion.porct_participacion,
+  votacion.id_ambito,
+  votacion.presidente,
+  votacion.id_estado,
+  votacion.id_votacion
+FROM
+  public.votacion,
+  public.censo_habilitado,
+  public.censo
+WHERE
+  censo_habilitado.id_votacion = votacion.id_votacion AND
+  censo.id_censo = censo_habilitado.id_censo;]]>
+	</queryString>
+	<field name="estado" class="java.lang.String"/>
+	<field name="id_votacion" class="java.lang.Integer"/>
+	<field name="id_censo" class="java.lang.Integer"/>
+	<field name="id_ambito" class="java.lang.Integer"/>
+	<field name="titulo" class="java.lang.String"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="fecha_inicio" class="java.sql.Date"/>
+	<field name="fecha_publicacion" class="java.sql.Date"/>
+	<field name="fecha_fin" class="java.sql.Date"/>
+	<field name="direccion_web" class="java.lang.String"/>
+	<field name="votos_totales" class="java.lang.Integer"/>
+	<field name="porct_participacion" class="java.math.BigDecimal"/>
+	<field name="presidente" class="java.lang.String"/>
+	<field name="id_estado" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="193" splitType="Stretch">
+			<staticText>
+				<reportElement x="68" y="68" width="156" height="20" uuid="132be4f4-07da-4909-9a03-80f24be13c7f"/>
+				<text><![CDATA[:Villegas Lopez Edison Franklin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="0" width="276" height="27" uuid="84b50fd8-229d-4af0-8f2f-eae70c2fa778"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSEJO NACIONAL ELECTORAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="68" width="52" height="20" uuid="f562798d-5ba1-4ded-be8e-1b8860cccd1c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="101" width="52" height="20" uuid="fedb0144-652f-4654-99cc-16f8fd7b6c35"/>
+				<textElement>
+					<font isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Ingeniero:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="68" y="101" width="156" height="20" uuid="ed8832aa-9781-4f77-ab10-dd9909cb563c"/>
+				<text><![CDATA[Robert Wilfrido Moreira Centeno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="525" y="68" width="53" height="20" uuid="92993ad7-cf7f-4acd-b49d-5546b641c802"/>
+				<textElement>
+					<font isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Materia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="525" y="101" width="37" height="20" uuid="1d7ab150-40e9-4f6c-b1c0-25f1c4d8dd99"/>
+				<textElement>
+					<font isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Curso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="578" y="68" width="126" height="20" uuid="de239ec5-37e9-484e-81a6-da3e332bcaa4"/>
+				<text><![CDATA[Gestion de base de datos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="563" y="101" width="30" height="20" uuid="c809550b-d4bf-407e-800b-662d75b16552"/>
+				<text><![CDATA[5 (A)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="193" y="140" width="536" height="31" uuid="76c3b20c-2d8d-40b5-b984-b4848d763e3a"/>
+				<textElement>
+					<font size="16" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de presidentes electos  con fecha de inicio,publicidad y fin]]></text>
+			</staticText>
+			<image>
+				<reportElement x="744" y="-7" width="200" height="200" uuid="ca644346-46ef-4093-9a6e-388c41ccf42d"/>
+				<imageExpression><![CDATA["C:\\Users\\ediso\\Downloads\\Gestion de base de datos\\consejo-nacional-electoral-cne1.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="51" y="-7" width="100" height="50" uuid="914197bc-761f-40c4-8487-a08f71040c7d"/>
+				<imageExpression><![CDATA["C:\\Users\\ediso\\Downloads\\Gestion de base de datos\\LOGO-ULEAM.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="68" height="20" uuid="e140b2ea-ba33-4d9c-ad84-8edbbfa398c0"/>
+				<text><![CDATA[estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="0" width="68" height="20" uuid="f7991a74-a494-4ef6-9f18-6baa7aef30ff"/>
+				<text><![CDATA[titulo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="204" y="0" width="68" height="20" uuid="9c4c2319-d79b-4da1-8a28-6b1a44b94035"/>
+				<text><![CDATA[fecha_inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="0" width="95" height="20" uuid="0c470008-c7f6-4d51-9284-f1611e764496"/>
+				<text><![CDATA[fecha_publicacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="0" width="68" height="20" uuid="54d0d6d1-8527-41e3-ad2b-4e2ec835259a"/>
+				<text><![CDATA[fecha_fin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="0" width="88" height="20" uuid="0dfdf521-91c6-4376-9b50-fec46cd32f11"/>
+				<text><![CDATA[direccion_web]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="608" y="0" width="68" height="20" uuid="a4ae627d-b68d-454c-9a73-9608d8b6657b"/>
+				<text><![CDATA[votos_totales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="704" y="0" width="104" height="20" uuid="d6b924b2-a4c9-4a19-9e46-eaa5708843ec"/>
+				<text><![CDATA[porct_participacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="813" y="0" width="108" height="20" uuid="cdbbf5ff-de53-4531-aed3-a40d85328e28"/>
+				<text><![CDATA[presidente]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="98" height="20" uuid="66ab1cd1-bb7c-49bf-979b-e4e2251a663d"/>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="98" y="0" width="106" height="20" uuid="87a3268e-8063-4703-88ca-8d815ad02ade"/>
+				<textFieldExpression><![CDATA[$F{titulo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="204" y="0" width="87" height="20" uuid="dd5ddda5-1725-4194-b18f-398f3c7c4a55"/>
+				<textFieldExpression><![CDATA[$F{fecha_inicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="291" y="0" width="114" height="20" uuid="182c41bc-c851-4fc4-b88c-8d02777d3d4d"/>
+				<textFieldExpression><![CDATA[$F{fecha_publicacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="0" width="100" height="20" uuid="8d810e10-5bd0-41f2-9c08-431dcf3a1cf3"/>
+				<textFieldExpression><![CDATA[$F{fecha_fin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="505" y="0" width="88" height="20" uuid="b510cb55-8801-4112-a2e8-f9e78d1b5e11"/>
+				<textFieldExpression><![CDATA[$F{direccion_web}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="608" y="0" width="85" height="20" uuid="a8a1065b-1676-4af0-b330-c872c20095cf"/>
+				<textFieldExpression><![CDATA[$F{votos_totales}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="704" y="0" width="68" height="20" uuid="4ebe3844-5d0d-4652-bcb1-8da2089bd197"/>
+				<textFieldExpression><![CDATA[$F{porct_participacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="813" y="0" width="147" height="20" uuid="699ad41d-7c37-4b84-a3c9-8fda3495b484"/>
+				<textFieldExpression><![CDATA[$F{presidente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="13" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="386" splitType="Stretch">
+			<barChart>
+				<chart>
+					<reportElement x="16" y="26" width="509" height="329" uuid="99c11624-2b4b-4c61-a603-feb4c664289e"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{titulo}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{titulo}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{votos_totales}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+			<pieChart>
+				<chart>
+					<reportElement x="546" y="123" width="398" height="232" uuid="96d6f04a-80ce-4b11-9c91-970215dd9c83"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{presidente}]]></keyExpression>
+					<valueExpression><![CDATA[$F{porct_participacion}]]></valueExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>
